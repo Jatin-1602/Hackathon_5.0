@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Contact Form</title>
+<h1 style="font-family: times new roman; text-align: center;">INFORMATION ENTRY</h1>
+<script
+	src = "https://code.jquery.com/jquery-3.4.1.js";
+integrity = "sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=";
+crossorigin = "anonymous";></script>
+
+<script>
+function SubForm() {
+  $.ajax({
+    url: "https://api.apispreadsheets.com/data/8443/",
+    type: "post",
+    data: $("#myForm").serializeArray(),
+    success: function () {
+      alert("Form Data Submitted :)");
+    },
+    error: function () {
+      alert("There was an error :(");
+    },
+  });
+}
+</script>
+</head>
+
+<body>
+  <form id="myForm">
+  <fieldset>
+  <legend>Personal and Family Info</legend>
+	<br/>
+	<label>full name</label>
+	<input name="full name" size="50"/>
+	<br/>
+	<br/>
+	<label>address</label>
+	<input name="address" size="50"/>
+	<br/>
+	<br/>
+	<label>email</label>
+	<input name="email" id="mail" size="50"/>
+	<br/>
+	<br/>
+	<label>dob</label>
+	<input name="dob"size="50"/>
+	<br/>
+	<br/>
+	<label>city</label>
+	<input name="city" size="50"/>
+	<br/>
+	<br/>
+	<label>state</label>
+	<input name="state" size="50"/>
+	<br/>
+	<br/>
+	<label>contact no.</label>
+	<input name="contact no." size="50"/>
+	<br/>
+	<br/>
+	</textarea>
+ 	<br/>
+	<br/>
+	<label>Member 1</label>
+	<input name="name1" size="50"/>
+	<br/>
+	<br/>
+	<label>email</label>
+	<input name="email1" id="mail1" size="50"/>
+	<br/>
+	<br/>
+	<label>Member 2</label>
+	<input name="name2" size="50"/>
+	<br/>
+	<br/>
+	<label>email</label>
+	<input name="email2" id="mail2" size="50"/>
+	<br/>
+	<br/>
+	<label>Member 3</label>
+	<input name="name3" size="50"/>
+	<br/>
+	<br/>
+	<label>email</label>
+	<input name="email3	" id="mail3" size="50"/>
+	<br/>
+	<br/>
+  </fieldset>
+  </form>
+  <button onclick="SubForm()">Submit</button>
+  
+</body>
+</html>
